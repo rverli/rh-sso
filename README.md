@@ -1,4 +1,4 @@
-## ID-RIO-AUTH (RH-SSO)
+## AUTH (RH-SSO)
 
 ./compress.sh
 

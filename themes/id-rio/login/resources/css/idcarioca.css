@@ -1,0 +1,200 @@
+html{
+    font-style: normal;
+    font-weight: 100;
+}
+
+body{
+    display: flex;
+    -ms-flex-align: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #f5f5f5;
+}
+
+/* tipografia */
+
+.login-idcarioca h1{
+    font-size: 23px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.59;
+    letter-spacing: 0.46px;
+    color: #0066cc;
+}
+
+.login-idcarioca p{
+    font-size: 16.5px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.39;
+    letter-spacing: normal;
+    text-align: left;
+    color: #7b7b7b;
+}
+
+.login-idcarioca a, .login-idcarioca a:hover{
+    color:#4579fb;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.cadastro-idcarioca a, .cadastro-idcarioca a:hover{
+    font-size:23px;
+}
+
+/* Layout base do template */
+.box{
+    border-radius: 4px;
+    box-shadow: 0px 2px 7px 0 rgba(1, 72, 92, 0.38);
+    background-color: #ffffff;
+    width: 960px;
+}
+
+.idcarioca-header{
+    padding: 59px 37px 0px 37px;
+}
+
+.idcarioca-content{
+    padding: 0px 37px 0px 37px;
+}
+
+.idcarioca-footer{
+  padding:15px;
+    width: auto;
+    height: 85px;
+    box-shadow: 0px 2px 0px 0 rgba(1, 72, 92, 0.38);
+    background-color: #008eb7;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    margin-top:49px;
+}
+
+/* formulario */
+
+.form-group .btn-primary{
+    width: 205px !important;
+    height: 52px !important;
+    border-radius: 4px !important;
+    background-color: #0066cc !important;
+    background-image: none !important;
+}
+
+.form-group label{
+    font-size: 16.5px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.21;
+    letter-spacing: normal;
+    text-align: left;
+    color: #7b7b7b;
+}
+
+.form-group input[type="text"], .form-group input[type="password"] {
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px 0 rgba(0, 0, 0, 0.05);
+    border: solid 1px #b6b6b6;
+    background-color: #ffffff;
+}
+
+.checkbox{
+    margin-top:10px;
+}
+
+.checkbox input[type="checkbox"]{
+    margin-top:10px !important;
+}
+
+
+/* css sobrescritos do keycloak */
+
+.login-pf-page .login-pf-page-header{
+    margin-bottom: 0px !important;
+}
+
+.card-pf {
+    max-width: 960px !important;
+}
+
+#kc-page-title{
+    height: 20px !important;
+    font-size: 20px !important;
+    font-weight: 500 !important;
+    font-stretch: normal !important;
+    font-style: normal !important;
+    line-height: 1.83 !important;
+    letter-spacing: 0.4px !important;
+    text-align: center !important;
+    color: #0066cc !important;
+}
+
+.alert-error{
+    width: 420px;
+    border-radius: 4px;
+    box-shadow: 0px 1px 0px 0 rgba(0, 0, 0, 0.05);
+    border: solid 1px #ff0000 !important;
+    background-color: #eff3f6 !important;
+}
+
+.instruction{
+    text-align: center !important;
+}
+
+
+/* media queries */
+
+@media (max-width: 767px) {
+    #kc-header {
+        text-align: center;
+    }
+
+    .login-pf body {
+        background: url("../img/bg.jpg") no-repeat center center fixed;
+    }
+}
+
+
+@media (max-width: 960px) {
+    .idcarioca-header{
+        margin-top:140px;
+    }
+}
+
+@media (max-width: 580px) {
+    .idcarioca-header{
+        margin-top:200px;
+    }
+}
+
+
+@media (min-width: 180px) and (max-width: 420px) {
+    .idcarioca-header{
+        margin-top:300px;
+    }
+}
+
+
+
+.instrucao-box{
+    background-color: #0066cc;
+    height: 52px;
+    width: auto;
+    border-radius: 8px;
+}
+
+.instrucao-box a{
+    color: #fff;
+    font-size: 23px;
+    line-height: 2em;
+}
+
+.instrucao-box a:hover{
+    color:#fff;
+}

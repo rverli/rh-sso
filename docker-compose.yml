@@ -1,0 +1,49 @@
+version: '3.1'
+services:
+
+  postgres:
+    container_name: id-rio-auth-database
+    image: postgres:latest
+    volumes:
+        - id-rio-auth-database-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: ${DATABASE_NAME}
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+    networks:
+      - rh-sso-net
+  
+  keycloak:
+      container_name: id-rio-auth
+      #image: rh-sso7-postgres:latest
+      build: .
+      environment:
+        DB_VENDOR: POSTGRES
+        DB_ADDR: ${DATABASE_HOST}
+        DB_PORT: ${DATABASE_PORT}
+        DB_DATABASE: ${DATABASE_NAME}
+        DB_USER: ${DATABASE_USER}
+        DB_PASSWORD: ${DATABASE_PASSWORD}
+        #KEYCLOAK_USER: ${ADMIN_USER}
+        #KEYCLOAK_PASSWORD: ${ADMIN_PASSWORD}
+        PROXY_ADDRESS_FORWARDING: "true"
+        #KEYCLOAK_IMPORT: /tmp/idrio_cidadao-realm.json
+        TZ: "America/Sao_Paulo"
+      volumes:
+        - ./realm:/tmp
+        - ./themes/id-rio/:/opt/jboss/rh-sso-7.1/themes/id-rio/
+        - ./kc-recaptcha-module/target/:/opt/jboss/rh-sso-7.1/standalone/deployments/
+      #Use port 8080 after development
+      ports:
+        - 8002:8080
+      networks:
+        - rh-sso-net
+      depends_on:
+        - postgres
+
+volumes:
+  id-rio-auth-database-data:
+
+networks:
+  rh-sso-net:
+    driver: bridge
